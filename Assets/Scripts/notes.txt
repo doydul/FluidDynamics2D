@@ -1,0 +1,11 @@
+f = number of fluid cells adjacent
+
+dt(f*p(i,j) - p(i-1,j) - p(i,j-1) - p(i+1,j) - p(i,j+1)) = -u(i+0.5,j) + u(i-0.5,j) - v(i,j+0.5) + v(i,j-0.5)
+f*p(i,j) - p(i-1,j) - p(i,j-1) - p(i+1,j) - p(i,j+1) = (-u(i+0.5,j) + u(i-0.5,j) - v(i,j+0.5) + v(i,j-0.5))/dt
+
+-u(i+0.5,j) + u(i-0.5,j) - v(i,j+0.5) + v(i,j-0.5) = rhs
+if adjacent cell is solid, add or subtract value from rhs
+
+f*p(i,j) - p(i-1,j) - p(i,j-1) - p(i+1,j) - p(i,j+1) = rhs/dt
+f*p(i,j) = rhs/dt + p(i-1,j) + p(i,j-1) + p(i+1,j) + p(i,j+1)
+p(i,j) = (rhs/dt + p(i-1,j) + p(i,j-1) + p(i+1,j) + p(i,j+1))/f
