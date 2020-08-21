@@ -22,17 +22,17 @@ namespace FluidDynamics {
                         )
                     ) / (1 + 4 * scale);
                     next.SetRho(x, y, result);
-                    next.SetU(x - 0.5, y, next.U(x - 0.5, y));
-                    next.SetV(x, y - 0.5, next.V(x, y - 0.5));
+                    next.SetU(x - 0.5, y, prev.U(x - 0.5, y));
+                    next.SetV(x, y - 0.5, prev.V(x, y - 0.5));
                 }
             }
             for (int x = 0; x < prev.width; x++) {
                 int y = prev.height;
-                next.SetV(x, y - 0.5, next.V(x, y - 0.5));
+                next.SetV(x, y - 0.5, prev.V(x, y - 0.5));
             }
             for (int y = 0; y < prev.height; y++) {
                 int x = prev.width;
-                next.SetU(x - 0.5, y, next.U(x - 0.5, y));
+                next.SetU(x - 0.5, y, prev.U(x - 0.5, y));
             }
         }
     }

@@ -23,12 +23,6 @@ namespace FluidDynamics {
                     AdvectV(x, y - 0.5);
                 }
             }
-            for (int x = 0; x < prev.width; x++) {
-                AdvectV(x, prev.height - 0.5);
-            }
-            for (int y = 0; y < prev.width; y++) {
-                AdvectU(prev.width - 0.5, y);
-            }
         }
 
         void AdvectRho(int x, int y) {

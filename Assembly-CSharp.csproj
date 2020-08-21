@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\GridSquare2D.cs" />
      <Compile Include="Assets\Scripts\MAC2D.cs" />
      <Compile Include="Assets\Scripts\MeshLines.cs" />
+     <Compile Include="Assets\Scripts\MouseHandler.cs" />
      <Compile Include="Assets\Scripts\PressureCalc2D.cs" />
      <Compile Include="Assets\Scripts\ProjectionCalc2D.cs" />
      <Compile Include="Assets\Scripts\SimulationManager.cs" />

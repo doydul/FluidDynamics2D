@@ -3,6 +3,19 @@ using UnityEngine;
 namespace FluidDynamics {
     public class MeshLines : MonoBehaviour {
         public MeshFilter meshFilter;
+        public MeshRenderer renderer;
+
+        void Awake() {
+            TurnOff();
+        }
+
+        public void TurnOn() {
+            renderer.enabled = true;
+        }
+
+        public void TurnOff() {
+            renderer.enabled = false;
+        }
 
         public void DisplayLines(float[] xs, float[] ys, float[] us, float[] vs) {
             var mesh = new Mesh();

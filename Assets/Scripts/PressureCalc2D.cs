@@ -11,7 +11,7 @@ namespace FluidDynamics {
             for (int x = 0; x < grid.width; x++) {
                 for (int y = 0; y < grid.height; y++) {
                     double rhs = -(grid.U(x + 0.5, y) - grid.U(x - 0.5, y) + grid.V(x, y + 0.5) - grid.V(x, y - 0.5));
-                    double lhs = -(grid.P(x + 1, y) + grid.P(x - 1, y) + grid.P(x, y + 1) + grid.P(x, y - 1));
+                    double lhs = grid.P(x + 1, y) + grid.P(x - 1, y) + grid.P(x, y + 1) + grid.P(x, y - 1);
                     int fluidNeighbours = 4;
                     if (grid.IsSolid(x + 1, y)) {
                         lhs += grid.P(x + 1, y);
